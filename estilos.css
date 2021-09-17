@@ -29,6 +29,7 @@
 	cursor:pointer;
     font-size:14px;
 	padding:12px 25px;
+    margin-left: 20px;
 }
 
 #enlace-registro {
@@ -42,6 +43,7 @@
     border: none;
     margin-top: 10px;
     margin-left: 5px;
+    padding: 8px;
 
 }
 
