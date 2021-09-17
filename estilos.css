@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cabezote {
+    background-color: rgb(91, 187, 53);
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+}
+
+.cabezote-reg {
+    background-color: rgb(143, 219, 57);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+}
+
+#btn-registrar{
+    background-color:rgb(34, 138, 34);
+	border-radius:8px;
+	border:1px solid rgb(34, 138, 34);
+	display:inline-block;
+	cursor:pointer;
+    font-size:14px;
+	padding:12px 25px;
+}
+
+#enlace-registro {
+    color: white;
+    text-decoration: none;
+}
+
+.casillas {
+    background-color: gainsboro;
+    border-radius:5px;
+    border: none;
+    margin-top: 10px;
+    margin-left: 5px;
+
+}
+
+.etiquetas {
+    color: black;
+}
+
+.btn-submit {
+    background-color:rgb(143, 219, 57);
+	border-radius:6px;
+	border:1px solid rgb(143, 219, 57);
+	display:inline-block;
+	cursor:pointer;
+    font-size:11px;
+	padding:8px 25px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
