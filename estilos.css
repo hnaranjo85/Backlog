@@ -1,63 +1,60 @@
+/* General */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+/* Index */
 .cabezote {
-    background-color: rgb(91, 187, 53);
+    background-color: rgb(143, 219, 57);
     color: white;
     padding: 20px;
     margin-bottom: 50px;
-    border-radius: 8px;
+    border-radius: 10px;
 }
-
-.cabezote-reg {
-    background-color: rgb(143, 219, 57);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 50px;
-    border-radius: 8px;
-}
-
-#btn-registrar{
+#btn-registrar {
     background-color:rgb(34, 138, 34);
-	border-radius:8px;
-	border:1px solid rgb(34, 138, 34);
-	display:inline-block;
-	cursor:pointer;
-    font-size:14px;
-	padding:12px 25px;
-    margin-left: 20px;
+    border-radius:10px;
+    margin: 10px;
+    padding: 10px;
+    width: 20%;
 }
-
 #enlace-registro {
     color: white;
     text-decoration: none;
 }
-
-.casillas {
+/* Register */
+.cabezote-reg {
+    background-color: rgb(143, 219, 57);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+#form-registro{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius:10px;
+    display: flex;
     background-color: gainsboro;
-    border-radius:5px;
-    border: none;
+    flex-direction: column;
+    align-items: center;
+}
+#form-registro label{
+    width: 85%;
     margin-top: 10px;
-    margin-left: 5px;
-    padding: 8px;
+    margin-bottom: 5px;
 }
-
-.etiquetas {
-    color: black;
+#form-registro input {
+    width: 90%;
+    height: 30px;
 }
-
-.btn-submit {
+#btn-submit-form {
+    margin: 30px;
     background-color:rgb(143, 219, 57);
-	border-radius:6px;
-	border:1px solid rgb(143, 219, 57);
-	display:inline-block;
-	cursor:pointer;
-    font-size:11px;
-	padding:8px 25px;
-    margin-top: 20px;
-    margin-left: 100px;
+    border-radius:10px;
+    border:1px solid rgb(143, 219, 57);
+    cursor:pointer;
+    font-size:16px;
 }
