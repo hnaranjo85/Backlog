@@ -13,6 +13,9 @@ function checkApellido (){
     else if(!expreg.test(lastname)) {
         alert('Caracteres no aceptados!');
     }
+    else {
+        return true;
+    }
 }
 function validate () {
     checkApellido();
