@@ -3,8 +3,8 @@ function checkApellido (){
     let lastname = document.getElementById("apellido").value;
     let expreg = new RegExp("/^a-zA-ZáéíóúÁÉÍÓÚ /");
     if (lastname == null || lastname.length == 0) {
-       alert('Campo obligatorio!');
-       return false;
+        alert('Campo obligatorio!');
+        return false;
     }
     else if(lastname.length < 4 || lastname.length > 30) {
         alert('Campo incompleto!');
@@ -40,10 +40,22 @@ function checkTelefono() {
     else {
         return true;
     }
+    
+}
 
+function checkEmail(valor){
+    let txtEmail = document.getElementById("correo").value;
+
+    if(!(/\S+@\S+\.\S+/.test(txtEmail)) || txtEmail.length === 0 || !txtEmail.trim()){
+        alert("El campo de email no cumple con las políticas");
+        return false;
+    }else{
+        return true;
+    }
 }
 
 function validate () {
     checkApellido();
     checkTelefono();
+    checkEmail();
 }
