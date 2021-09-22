@@ -1,7 +1,7 @@
 
 function checkApellido (){
     let lastname = document.getElementById("apellido").value;
-    let pattern = new RegExp("/^a-zA-ZáéíóúÁÉÍÓÚ /");
+    let pattern = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚ ]+$");
     if (lastname == null || lastname.length == 0) {
        alert('El campo Apellido es obligatorio!');
        return false;
@@ -11,7 +11,7 @@ function checkApellido (){
         return false;
     }
     else if(!pattern.test(lastname)) {
-        alert('El campo Apellido no acepta caracteres especiales ni numéricos!');
+        alert('El campo Apellido no acepta caracteres numéricos!');
         return false;
     }
     else {
@@ -40,7 +40,7 @@ function checkTelefono() {
     }
 }
 
- function checkEmail(){
+ function checkCorreo(){
     let txtEmail = document.getElementById("correo").value;
 
     if(!(/\S+@\S+\.\S+/.test(txtEmail)) || txtEmail.length === 0 || !txtEmail.trim()){
@@ -69,9 +69,15 @@ function checkContrasena(){
     }
 }
 
-function validate () {
+function validateRegisterForm() {
     checkApellido();
     checkTelefono();
-    checkEmail();
+    checkCorreo();
     checkContrasena();
 }
+
+
+module.exports = checkApellido();
+module.exports = checkTelefono();
+module.exports = checkContrasena();
+module.exports = checkContrasena();
