@@ -26,22 +26,30 @@ function checkTelefono() {
         alert("El campo telefono es obligatorio!");
         return false;
     }
-
     else if (regex.test(telefono) == false) {
         alert("El campo telefono solo puede contener números!");
         return false;
     }
-
     else if (telefono.length != 7) {
         alert("El campo telefono debe contener 7 digitos!");
         return false;
     }
-
     else {
         return true;
     }
-
 }
+
+ function checkEmail(){
+    let txtEmail = document.getElementById("correo").value;
+
+    if(!(/\S+@\S+\.\S+/.test(txtEmail)) || txtEmail.length === 0 || !txtEmail.trim()){
+        alert("El campo de email no cumple con las políticas");
+        return false;
+    }else{
+        return true;
+    }
+  }
+
 function checkContrasena(){
     var contrasena;
     contrasena = document.getElementById("contrasena").value;
@@ -63,5 +71,6 @@ function checkContrasena(){
 function validate () {
     checkApellido();
     checkTelefono();
+    checkEmail();
     checkContrasena();
 }
