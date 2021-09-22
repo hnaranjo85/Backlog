@@ -42,8 +42,26 @@ function checkTelefono() {
     }
 
 }
+function checkContrasena(){
+    var contrasena;
+    contrasena = document.getElementById("contrasena").value;
+    expresion = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/;
+
+    if (contrasena == null || contrasena.length == 0){
+        alert("Constraseña no debe estar vacia")
+        return false;
+    }
+    else if(!expresion.test(contrasena)){
+        alert("Contraseña no valida")
+        return false;
+    }
+    else{
+        return true;
+    }
+}
 
 function validate () {
     checkApellido();
     checkTelefono();
+    checkContrasena();
 }
