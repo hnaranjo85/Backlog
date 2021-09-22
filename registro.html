@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +11,8 @@
     <header>
         <h1 class="cabezote-reg">Registro</h1>
     </header>
-
-    <div>
-        <form action="" id="form-registro">
+    <main>
+        <form action="" id="form-registro" onsubmit=validate()>
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre">
 
@@ -26,13 +25,14 @@
             <label for="correo">Correo</label>
             <input type="email" id="correo">
 
-            <label for="contrasenia">Contraseña</label>
-            <input type="password" id="contrasenia">
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena">
 
             <input class="btn-submit" type="submit" id="btn-submit-form" value="Registrar">
         </form>
-    </div>
+    </main>
 
+    <script type="text/javascript" src="form.js"></script>
 
 </body>
 </html>
