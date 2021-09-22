@@ -2,6 +2,7 @@
 function checkApellido (){
     let lastname = document.getElementById("apellido").value;
     let pattern = new RegExp("^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]+$");
+
     if (lastname == null || lastname.length == 0) {
        alert('El campo Apellido es obligatorio!');
        return false;
@@ -52,16 +53,15 @@ function checkTelefono() {
   }
 
 function checkContrasena(){
-    var contrasena;
-    contrasena = document.getElementById("contrasena").value;
-    expresion = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/;
+    let contrasena = document.getElementById("contrasena").value;
+    let expresion = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/;
 
     if (contrasena == null || contrasena.length == 0){
-        alert("Constraseña no debe estar vacia")
+        alert("La Constraseña no debe estar vacia")
         return false;
     }
     else if(!expresion.test(contrasena)){
-        alert("Contraseña no valida")
+        alert("La contraseña debe contener por lo menos una letra mayúscula, minúscula, un número y con una longitud mayor o igual a 8 dígitos");
         return false;
     }
     else{
@@ -75,7 +75,6 @@ function validateRegisterForm() {
     checkCorreo();
     checkContrasena();
 }
-
 
 module.exports = checkApellido();
 module.exports = checkTelefono();
