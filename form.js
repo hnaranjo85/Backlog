@@ -1,7 +1,7 @@
 
 function checkApellido (){
     let lastname = document.getElementById("apellido").value;
-    let pattern = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚ ]+$");
+    let pattern = new RegExp("^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]+$");
     if (lastname == null || lastname.length == 0) {
        alert('El campo Apellido es obligatorio!');
        return false;
@@ -11,7 +11,7 @@ function checkApellido (){
         return false;
     }
     else if(!pattern.test(lastname)) {
-        alert('El campo Apellido no acepta caracteres numéricos!');
+        alert('El campo Apellido no acepta caracteres especiales ni numéricos!');
         return false;
     }
     else {
