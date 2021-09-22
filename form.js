@@ -17,6 +17,33 @@ function checkApellido (){
         return true;
     }
 }
+
+function checkTelefono() {
+    let telefono = document.getElementById("telefono").value;
+    let regex = new RegExp('^[0-9]+$');
+
+    if (telefono == null || telefono.length == 0) {
+        alert("El campo telefono es obligatorio!");
+        return false;
+    }
+
+    else if (regex.test(telefono) == false) {
+        alert("El campo telefono solo puede contener números!");
+        return false;
+    }
+
+    else if (telefono.length != 7) {
+        alert("El campo telefono debe contener 7 digitos!");
+        return false;
+    }
+
+    else {
+        return true;
+    }
+
+}
+
 function validate () {
     checkApellido();
+    checkTelefono();
 }
