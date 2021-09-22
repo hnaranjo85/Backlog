@@ -1,17 +1,18 @@
 
 function checkApellido (){
     let lastname = document.getElementById("apellido").value;
-    let expreg = new RegExp("/^a-zA-ZáéíóúÁÉÍÓÚ /");
+    let pattern = new RegExp("/^a-zA-ZáéíóúÁÉÍÓÚ /");
     if (lastname == null || lastname.length == 0) {
-       alert('Campo obligatorio!');
+       alert('El campo Apellido es obligatorio!');
        return false;
     }
     else if(lastname.length < 4 || lastname.length > 30) {
-        alert('Campo incompleto!');
+        alert('El campo Apellido debe tener entre 4 y 30 caracteres!');
         return false;
     }
-    else if(!expreg.test(lastname)) {
-        alert('Caracteres no aceptados!');
+    else if(!pattern.test(lastname)) {
+        alert('El campo Apellido no acepta caracteres especiales ni numéricos!');
+        return false;
     }
     else {
         return true;
