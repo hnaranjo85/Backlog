@@ -1,16 +1,21 @@
-function checkNombre (){
-    let name = document.getElementById("nombre").value;
+let name = document.getElementById("nombre").value;
+let lastname = document.getElementById("apellido").value;
+let phone = document.getElementById("telefono").value;
+let email = document.getElementById("correo").value;
+let password = document.getElementById("contrasena").value;
+
+function checkNombre(valor){
     let expreg = new RegExp(/^[A-Za-záéíóúñÁÉÍÓÚÑ ]+$/);
 
-    if (name == null || name.length == 0) {
+    if (valor == null || valor.length == 0) {
        alert('El Nombre no debe estar vacio!');
        return false;
     }
-    else if(name.length < 4 || name.length > 30) {
+    else if(valor.length < 4 || valor.length > 30) {
         alert('El Nombre debe contener entre 4 y 30 caracteres');
         return false;
     }
-    else if(!expreg.test(name)) {
+    else if(!expreg.test(valor)) {
         alert('El Nombre no acepta caracteres especiales ni numéricos!');
         return false;
     }
@@ -19,19 +24,18 @@ function checkNombre (){
     }
 } 
 
-function checkApellido (){
-    let lastname = document.getElementById("apellido").value;
+function checkApellido(valor){
     let pattern = new RegExp(/^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]+$/);
 
-    if (lastname == null || lastname.length == 0) {
+    if (valor == null || valor.length == 0) {
        alert('El Apellido no debe estar vacio!');
        return false;
     }
-    else if(lastname.length < 4 || lastname.length > 30) {
+    else if(valor.length < 4 || valor.length > 30) {
         alert('El Apellido debe tener entre 4 y 30 caracteres!');
         return false;
     }
-    else if(!pattern.test(lastname)) {
+    else if(!pattern.test(valor)) {
         alert('El Apellido no acepta caracteres especiales ni numéricos!');
         return false;
     }
@@ -40,19 +44,18 @@ function checkApellido (){
     }
 }
 
-function checkTelefono() {
-    let telefono = document.getElementById("telefono").value;
+function checkTelefono(valor) {
     let regex = new RegExp('^[0-9]+$');
 
-    if (telefono == null || telefono.length == 0) {
+    if (valor == null || valor.length == 0) {
         alert("El Telefono no debe estar vacio!");
         return false;
     }
-    else if (regex.test(telefono) == false) {
+    else if (regex.test(valor) == false) {
         alert("El Telefono solo puede contener números!");
         return false;
     }
-    else if (telefono.length != 7) {
+    else if (valor.length != 7) {
         alert("El Telefono debe contener 7 digitos!");
         return false;
     }
@@ -61,13 +64,11 @@ function checkTelefono() {
     }
 }
 
- function checkCorreo(){
-    let txtEmail = document.getElementById("correo").value;
-
-    if(txtEmail.length === 0){
+ function checkCorreo(valor){
+    if(valor.length === 0){
         alert("El Email no debe estar vacío");
         return false;
-    }else if (!/\S+@\S+\.\S+/.test(txtEmail) || !txtEmail.trim()) {
+    }else if (!/\S+@\S+\.\S+/.test(txtEmail) || !valor.trim()) {
         alert("Debe ser un correo válido!");
         return false;
     }
@@ -76,15 +77,15 @@ function checkTelefono() {
     }
   }
 
-function checkContrasena(){
-    let contrasena = document.getElementById("contrasena").value;
+
+function checkContrasena(valor){
     let expresion = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/;
 
-    if (contrasena == null || contrasena.length == 0){
+    if (valor == null || valor.length == 0){
         alert("La Constraseña no debe estar vacia")
         return false;
     }
-    else if(!expresion.test(contrasena)){
+    else if(!expresion.test(valor)){
         alert("La contraseña debe contener por lo menos una letra mayúscula, minúscula, un número y con una longitud mayor o igual a 8 dígitos");
         return false;
     }
@@ -93,13 +94,12 @@ function checkContrasena(){
     }
 }
 
-
 function validateRegisterForm() {
-    checkNombre();
-    checkApellido();
-    checkTelefono();
-    checkCorreo();
-    checkContrasena();
+    checkNombre(name);
+    checkApellido(lastname);
+    checkTelefono(phone);
+    checkCorreo(email);
+    checkContrasena(password);
 }
 
 
