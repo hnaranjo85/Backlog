@@ -1,9 +1,3 @@
-let name = document.getElementById("nombre").value;
-let lastname = document.getElementById("apellido").value;
-let phone = document.getElementById("telefono").value;
-let email = document.getElementById("correo").value;
-let password = document.getElementById("contrasena").value;
-
 function checkNombre(valor){
     let expreg = new RegExp(/^[A-Za-záéíóúñÁÉÍÓÚÑ ]+$/);
 
@@ -22,7 +16,7 @@ function checkNombre(valor){
     else {
         return true;
     }
-} 
+}
 
 function checkApellido(valor){
     let pattern = new RegExp(/^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]+$/);
@@ -68,7 +62,7 @@ function checkTelefono(valor) {
     if(valor.length === 0){
         alert("El Email no debe estar vacío");
         return false;
-    }else if (!/\S+@\S+\.\S+/.test(txtEmail) || !valor.trim()) {
+    }else if (!/\S+@\S+\.\S+/.test(valor) || !valor.trim()) {
         alert("Debe ser un correo válido!");
         return false;
     }
@@ -95,16 +89,20 @@ function checkContrasena(valor){
 }
 
 function validateRegisterForm() {
+    let name = document.getElementById("nombre").value;
     checkNombre(name);
+
+    let lastname = document.getElementById("apellido").value;
     checkApellido(lastname);
-    checkTelefono(phone);
-    checkCorreo(email);
-    checkContrasena(password);
+
+    let telefono = document.getElementById("telefono").value;
+    checkTelefono(telefono);
+
+    let txtEmail = document.getElementById("correo").value;
+    checkCorreo(txtEmail);
+
+    let contrasena = document.getElementById("contrasena").value;
+    checkContrasena(contrasena);
 }
 
-
-module.exports = checkNombre();
-module.exports = checkApellido();
-module.exports = checkTelefono();
-module.exports = checkCorreo();
-module.exports = checkContrasena();
+module.exports = { checkNombre, checkApellido, checkTelefono, checkCorreo, checkContrasena }
