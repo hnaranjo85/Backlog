@@ -1,3 +1,23 @@
+function checkNombre (){
+    let name = document.getElementById("nombre").value;
+    let expreg = new RegExp(/^[A-Za-z]+$/);
+    if (name == null || name.length == 0) {
+       alert('Campo obligatorio!');
+       return false;
+    }
+    else if(name.length < 4 || name.length > 30) {
+        alert('Campo incompleto!');
+        return false;
+    }
+    else if(!expreg.test(name)) {
+        alert('Caracteres inválidos!');
+        
+    }
+    else {
+        return true;
+    }
+} 
+
 
 function checkApellido (){
     let lastname = document.getElementById("apellido").value;
@@ -44,6 +64,7 @@ function checkTelefono() {
 }
 
 function validate () {
+    checkNombre();
     checkApellido();
     checkTelefono();
 }
