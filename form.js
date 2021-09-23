@@ -3,15 +3,15 @@ function checkNombre (){
     let expreg = new RegExp(/^[A-Za-záéíóúñÁÉÍÓÚÑ ]+$/);
 
     if (name == null || name.length == 0) {
-       alert('El Campo Nombre es obligatorio!');
+       alert('El Nombre no debe estar vacio!');
        return false;
     }
     else if(name.length < 4 || name.length > 30) {
-        alert('El campo Nombre debe contener entre 4 y 30 caracteres');
+        alert('El Nombre debe contener entre 4 y 30 caracteres');
         return false;
     }
     else if(!expreg.test(name)) {
-        alert('Campo Nombre con caracteres inválidos!');
+        alert('El Nombre no acepta caracteres especiales ni numéricos!');
         return false;
     }
     else {
@@ -24,15 +24,15 @@ function checkApellido (){
     let pattern = new RegExp(/^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]+$/);
 
     if (lastname == null || lastname.length == 0) {
-       alert('El campo Apellido es obligatorio!');
+       alert('El Apellido no debe estar vacio!');
        return false;
     }
     else if(lastname.length < 4 || lastname.length > 30) {
-        alert('El campo Apellido debe tener entre 4 y 30 caracteres!');
+        alert('El Apellido debe tener entre 4 y 30 caracteres!');
         return false;
     }
     else if(!pattern.test(lastname)) {
-        alert('El campo Apellido no acepta caracteres especiales ni numéricos!');
+        alert('El Apellido no acepta caracteres especiales ni numéricos!');
         return false;
     }
     else {
@@ -45,15 +45,15 @@ function checkTelefono() {
     let regex = new RegExp('^[0-9]+$');
 
     if (telefono == null || telefono.length == 0) {
-        alert("El campo telefono es obligatorio!");
+        alert("El Telefono no debe estar vacio!");
         return false;
     }
     else if (regex.test(telefono) == false) {
-        alert("El campo telefono solo puede contener números!");
+        alert("El Telefono solo puede contener números!");
         return false;
     }
     else if (telefono.length != 7) {
-        alert("El campo telefono debe contener 7 digitos!");
+        alert("El Telefono debe contener 7 digitos!");
         return false;
     }
     else {
@@ -64,10 +64,14 @@ function checkTelefono() {
  function checkCorreo(){
     let txtEmail = document.getElementById("correo").value;
 
-    if(!(/\S+@\S+\.\S+/.test(txtEmail)) || txtEmail.length === 0 || !txtEmail.trim()){
-        alert("El campo de email no cumple con las políticas");
+    if(txtEmail.length === 0){
+        alert("El Email no debe estar vacío");
         return false;
-    }else{
+    }else if (!/\S+@\S+\.\S+/.test(txtEmail) || !txtEmail.trim()) {
+        alert("Debe ser un correo válido!");
+        return false;
+    }
+    else{
         return true;
     }
   }
@@ -97,6 +101,7 @@ function validateRegisterForm() {
     checkCorreo();
     checkContrasena();
 }
+
 
 module.exports = checkNombre();
 module.exports = checkApellido();
