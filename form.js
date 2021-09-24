@@ -105,4 +105,4 @@ function validateRegisterForm() {
     checkContrasena(contrasena);
 }
 
-module.exports = { checkNombre, checkApellido, checkTelefono, checkCorreo, checkContrasena }
+module.exports = { checkNombre, checkApellido, checkTelefono, checkCorreo, checkContrasena };
