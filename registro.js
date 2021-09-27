@@ -4,8 +4,11 @@ const registerForm = document.querySelector('#form-registro');
 const formData = [];
 let counter = 0;
 
-// Asociar el evento submit con el formulario
-registerForm.addEventListener('submit', (e) => {
+// Asociar el evento submit del formulario con la función
+registerForm.addEventListener('submit', agregarRegistro);
+
+//Funcion para agregar los datos de registro en un array
+function agregarRegistro(e) {
     // Detener la acción por defecto del formulario
     e.preventDefault();
     // Obtner los datos de los inputs
@@ -31,5 +34,7 @@ registerForm.addEventListener('submit', (e) => {
     registerForm.reset();
     // Mostrar datos en consola
     console.log(formData);
+}
 
-});
+
+module.exports = { agregarRegistro };
