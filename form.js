@@ -95,14 +95,14 @@ function validateRegisterForm() {
     let lastname = document.getElementById("apellido").value;
     checkApellido(lastname);
 
-    let telefono = document.getElementById("telefono").value;
-    checkTelefono(telefono);
+    let phone = document.getElementById("telefono").value;
+    checkTelefono(phone);
 
-    let txtEmail = document.getElementById("correo").value;
-    checkCorreo(txtEmail);
+    let email = document.getElementById("correo").value;
+    checkCorreo(email);
 
-    let contrasena = document.getElementById("contrasena").value;
-    checkContrasena(contrasena);
+    let password = document.getElementById("contrasena").value;
+    checkContrasena(password);
 }
 
 module.exports = { checkNombre, checkApellido, checkTelefono, checkCorreo, checkContrasena };
