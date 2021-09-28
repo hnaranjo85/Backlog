@@ -34,13 +34,13 @@ function agregarRegistro(e) {
     registerForm.reset();
     // Mostrar datos en consola
     console.log(formData);
-    ordenarArreglo();
+    ordenarArreglo(formData);
 }
 // Ordenar registros por apellido
-function ordenarArreglo(){
+function ordenarArreglo(arreglo){
    
-    formData.sort((a, b) => a.apellido.localeCompare(b.apellido));
-    console.log(formData);
+    arreglo.sort((a, b) => a.apellido.localeCompare(b.apellido));
+    console.log(arreglo);
 } 
 
 // Filtrar correos que contengan el dominio 'gmail.com'
@@ -61,4 +61,4 @@ function filtrarCorreo(arreglo) {
 }
 
 
-module.exports = { agregarRegistro };
+module.exports = { agregarRegistro, ordenarArreglo,filtrarCorreo };
