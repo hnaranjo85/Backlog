@@ -34,11 +34,8 @@ function agregarRegistro(e) {
     registerForm.reset();
     // Mostrar datos en consola
     console.log(formData);
-    
+    ordenarArreglo(formData);
 }
-// Asociar el evento submit del formulario con la función
-registerForm.addEventListener('submit', ordenarArreglo(formData));
-
 // Ordenar registros por apellido
 function ordenarArreglo(arreglo){
    
@@ -64,4 +61,4 @@ function filtrarCorreo(arreglo) {
 }
 
 
-module.exports = { agregarRegistro };
+module.exports = { agregarRegistro, ordenarArreglo,filtrarCorreo };
