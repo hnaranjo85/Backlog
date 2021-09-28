@@ -34,7 +34,14 @@ function agregarRegistro(e) {
     registerForm.reset();
     // Mostrar datos en consola
     console.log(formData);
+    ordenarArreglo();
 }
+// Ordenar registros por apellido
+function ordenarArreglo(){
+   
+    formData.sort((a, b) => a.apellido.localeCompare(b.apellido));
+    console.log(formData);
+} 
 
 // Filtrar correos que contengan el dominio 'gmail.com'
 function filtrarCorreo(arreglo) {
