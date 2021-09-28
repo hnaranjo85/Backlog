@@ -36,5 +36,22 @@ function agregarRegistro(e) {
     console.log(formData);
 }
 
+// Filtrar correos que contengan el dominio 'gmail.com'
+function filtrarCorreo(arreglo) {
+
+    let correos_filtrados = [];
+    let filtro = "gmail.com"
+
+    for (var dataObject of arreglo){
+        let correo = dataObject["correo"]
+        if (correo.includes(filtro)) {
+            correos_filtrados.push(dataObject)
+        }
+    }
+
+    console.log(correos_filtrados);
+    return correos_filtrados;
+}
+
 
 module.exports = { agregarRegistro };
