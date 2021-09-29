@@ -71,7 +71,6 @@ function checkTelefono(valor) {
     }
   }
 
-
 function checkContrasena(valor){
     let expresion = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/;
 
@@ -89,20 +88,33 @@ function checkContrasena(valor){
 }
 
 function validateRegisterForm() {
+    checkFunction = [];
+
     let name = document.getElementById("nombre").value;
-    checkNombre(name);
+    checkFunction.push(checkNombre(name));
 
     let lastname = document.getElementById("apellido").value;
-    checkApellido(lastname);
+    checkFunction.push(checkApellido(lastname));
 
     let phone = document.getElementById("telefono").value;
-    checkTelefono(phone);
+    checkFunction.push(checkTelefono(phone));
 
     let email = document.getElementById("correo").value;
-    checkCorreo(email);
+    checkFunction.push(checkCorreo(email));
 
     let password = document.getElementById("contrasena").value;
-    checkContrasena(password);
+    checkFunction.push(checkContrasena(password));
+
+    let result = checkFunction.every(Boolean);
+    let validate = document.querySelector('#valida');
+
+    if(result) {
+        validate.setAttribute('value', 1);
+    }else{
+        validate.setAttribute('value', 0);
+    }
+
+    return result;
 }
 
 module.exports = { checkNombre, checkApellido, checkTelefono, checkCorreo, checkContrasena };
