@@ -1,3 +1,4 @@
+//Arreglo de registros
 let registros = [];
 
 //Ordenar registros por apellido
