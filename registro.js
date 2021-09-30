@@ -1,3 +1,5 @@
+let registros = [];
+
 //Ordenar registros por apellido
 function ordenarArreglo(arreglo){
     arreglo.sort((a, b) => a.apellido.localeCompare(b.apellido));
