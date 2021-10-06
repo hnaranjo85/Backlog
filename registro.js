@@ -11,41 +11,43 @@ registerForm.addEventListener('submit', agregarRegistro);
 function agregarRegistro(e) {
     // Detener la acción por defecto del formulario
     e.preventDefault();
-    // Obtner los datos de los inputs
-    let name = document.querySelector('#nombre').value;
-    let lastname = document.querySelector('#apellido').value;
-    let phone = document.querySelector('#telefono').value;
-    let email = document.querySelector('#correo').value;
-    let password = document.querySelector('#contrasena').value;
+    // Campo oculto validador del formulario
+    const checkForm = document.querySelector('#valida').getAttribute('value');
+    if(checkForm == 1) {
+        // Obtner los datos de los inputs
+        let name = document.querySelector('#nombre').value;
+        let lastname = document.querySelector('#apellido').value;
+        let phone = document.querySelector('#telefono').value;
+        let email = document.querySelector('#correo').value;
+        let password = document.querySelector('#contrasena').value;
 
-    // Crear un objeto con los valores de los inputs
-    let dataObject = {
-        'nombre':       name,
-        'apellido':     lastname,
-        'telefono':     phone,
-        'correo':       email,
-        'contraseña':   password,
-        'registro':     counter +=1
-    };
+        // Crear un objeto con los valores de los inputs
+        let dataObject = {
+            'nombre':       name,
+            'apellido':     lastname,
+            'telefono':     phone,
+            'correo':       email,
+            'contraseña':   password,
+            'registro':     counter +=1
+        };
 
-    // Agregar al array los datos del objecto
-    formData.push(dataObject);
-    // Resetear el formulario
-    registerForm.reset();
-    // Mostrar datos en consola
-    console.log(formData);
-    ordenarArreglo(formData);
+        // Agregar al array los datos del objecto
+        formData.push(dataObject);
+        // Resetear el formulario
+        registerForm.reset();
+        // Mostrar arreglo ordenado
+        ordenarArreglo(formData);
+    }
 }
+
 // Ordenar registros por apellido
 function ordenarArreglo(arreglo){
-   
     arreglo.sort((a, b) => a.apellido.localeCompare(b.apellido));
     console.log(arreglo);
-} 
+}
 
 // Filtrar correos que contengan el dominio 'gmail.com'
 function filtrarCorreo(arreglo) {
-
     let correos_filtrados = [];
     let filtro = "gmail.com"
 
@@ -60,5 +62,4 @@ function filtrarCorreo(arreglo) {
     return correos_filtrados;
 }
 
-
-module.exports = { agregarRegistro, ordenarArreglo,filtrarCorreo };
+module.exports = { agregarRegistro, ordenarArreglo, filtrarCorreo };
