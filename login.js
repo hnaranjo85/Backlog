@@ -16,6 +16,7 @@ function validarCAPTCHA(valor) {
   }
 }
 
+
 module.exports.login = login;
 module.exports.registros = registros;
 module.exports.validarCAPTCHA = validarCAPTCHA;
