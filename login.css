@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cabezote-reg {
+    background-color: rgb(143, 219, 57);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    margin: 50px 50px 50px 50px;
+    border-radius: 8px;
+}
+
+.form-login{
+
+}
+
+.form-casilla{
+    background-color: gainsboro;
+    border-radius:5px;
+    border: none;
+    margin-top: 10px;
+    padding: 8px;
+    width: 220px;
+}
+
+.btn-submit{
+    background-color:rgb(143, 219, 57);
+	border-radius:6px;
+	border:1px solid rgb(143, 219, 57);
+	font-size: 16px;
+    padding: 14px 100px;
+    margin-top: 70px;
+    font-weight: 550;
+}
+
+.container-form{
+    display: flex;
+    justify-content: center;
+}
+
+.container-btn{
+    margin-right: 0px;
+    margin-left: 43px;
+}
+
+.container-captcha{
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+}
+
+#captcha{
+    margin-left: 39px;
+    width: 250px;
+}
+
+#correo{
+    margin-left: 33px;
+}
+
+form > div > label {
+    margin-right: 5px;
+}
+form > div > input{
+    margin-left: 5px;
+}
+
+.container-captcha label{
+    font-weight: 550;
+}
