@@ -1,7 +1,56 @@
+const loginForm = document.querySelector('.form-login');
+// const registerForm = document.querySelector('#form-registro');
+// Simulacion de los registros
+let dataObject1 = {
+  'nombre':       'Camila',
+  'apellido':     'Perez',
+  'telefono':     '3216547',
+  'correo':       "camilap@gmail.com",
+  'contraseña':   "Camila1478",
+  'registro':     1
+};
+
+let dataObject2 = {
+  'nombre':       'Juan',
+  'apellido':     'Perez',
+  'telefono':     '3216547',
+  'correo':       'juanp@gmail.com',
+  'contraseña':   'Juane1478',
+  'registro':     2
+};
+
 let registros = [];
+registros.push(dataObject1);
+registros.push(dataObject2);
+
+//if (loginForm !== null){
+  loginForm.addEventListener('submit', login);
+//}
+
+// if (registerForm !== null){
+//   registerForm.addEventListener('submit', agregarRegistro);
+// }
 
 function login() {
-
+  let validado = false;
+  let email = document.querySelector('#correo').value;
+  let password = document.querySelector('#contrasena').value;
+  let captcha = document.querySelector('#captcha').value;
+  registros.forEach(registro => {
+    console.log(registro.correo),
+    console.log(registro.contraseña)
+    console.log(email);
+    if (email === registro.correo) {
+      if (password === registro.contraseña) {
+        validado = true;        
+      }
+    }
+  });
+  if (validado && validarCAPTCHA(captcha)){
+    alert('Welcome');
+  }else{
+    alert('Datos incorrectos');
+  }
 }
 
 function agregarRegistro() {
